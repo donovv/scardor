@@ -4,7 +4,7 @@
   "authentication": {
     "entity": "user",
     "service": "users",
-    "secret": "uTiw5mCq0hFMr5gMkworbVuwNh0=",
+    "secret": "SECRET",
     "authStrategies": [
       "jwt",
       "local"
@@ -23,5 +23,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb+srv://scardor:Kz3PbYHr05D6I2aE@scardor.svllzth.mongodb.net/test?authSource=admin&replicaSet=atlas-vqt0vo-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true"
+  "mongodb": "MONGODB"
 }
