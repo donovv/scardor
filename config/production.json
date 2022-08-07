@@ -1,5 +1,5 @@
 {
-  "host": "scardor-backend-app.feathersjs.com",
+  "host": "localhost",
   "port": "PORT",
   "public": "../public/",
   "paginate": {
