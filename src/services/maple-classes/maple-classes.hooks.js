@@ -5,10 +5,18 @@ module.exports = {
     all: [],
     find: [],
     get: [],
-    create: [],
-    update: [authenticate('jwt')],
-    patch: [authenticate('jwt')],
-    remove: [authenticate('jwt')]
+    create: [authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') throw new Error('Only Admins can do this');
+    }],
+    update: [authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') throw new Error('Only Admins can do this');
+    }],
+    patch: [authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') throw new Error('Only Admins can do this');
+    }],
+    remove: [authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') throw new Error('Only Admins can do this');
+    }]
   },
 
   after: {

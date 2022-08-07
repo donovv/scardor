@@ -9,10 +9,18 @@ module.exports = {
     all: [],
     find: [ authenticate('jwt') ],
     get: [ authenticate('jwt') ],
-    create: [ hashPassword('password') ],
-    update: [ hashPassword('password'),  authenticate('jwt') ],
-    patch: [ hashPassword('password'),  authenticate('jwt') ],
-    remove: [ authenticate('jwt') ]
+    create: [ hashPassword('password'), (context) => {
+      context.data.privledgelevel = 'user';
+    } ],
+    update: [ hashPassword('password'),  authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') context.data.privledgelevel = 'user';
+    } ],
+    patch: [ hashPassword('password'),  authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') context.data.privledgelevel = 'user';
+    } ],
+    remove: [ authenticate('jwt'), context => {
+      if (context.params.user.privledgelevel !== 'admin') throw new Error('Only Admins can do this');
+    } ]
   },
 
   after: {
