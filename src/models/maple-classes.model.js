@@ -43,7 +43,7 @@ module.exports = function (app) {
       bossutil: {type: Number},
       burst: {type: Number},
       offburst: {type: Number},
-      survivability: {type: Number},
+      survivabilty: {type: Number},
     },
     rating: Number,
 
