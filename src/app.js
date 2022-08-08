@@ -23,7 +23,7 @@ const mongoose = require('./mongoose');
 const app = express(feathers());
 
 const corsOptions = {
-  origin: 'http://localhost:8080',
+  origin: 'https://scardor-website.herokuapp.com/',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   credentials: true,
 }
