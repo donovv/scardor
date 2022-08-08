@@ -7,7 +7,7 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
+    find: [ context => console.log(context) ,authenticate('jwt') ],
     get: [ authenticate('jwt') ],
     create: [ hashPassword('password'), (context) => {
       context.data.privledgelevel = 'user';
