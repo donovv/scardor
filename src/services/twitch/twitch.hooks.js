@@ -23,7 +23,7 @@ module.exports = {
         context.app.service('twitch').create({access_token: res.data.access_token});
         access_token = res.data.access_token;
       }
-      const final = await axios.get('https://api.twitch.tv/helix/streams?user_login=donovv', {
+      const final = await axios.get('https://api.twitch.tv/helix/streams?user_login=scardor', {
         headers: {
           'Client-Id': context.app.settings.ttv_client_id,
           'Authorization': `Bearer ${access_token}`
