@@ -18,7 +18,7 @@
       "header": {
         "typ": "access"
       },
-      "audience": "https://yourdomain.com",
+      "audience": "https://Scardor.com",
       "issuer": "feathers",
       "algorithm": "HS256",
       "expiresIn": "1d"
@@ -28,5 +28,7 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "MONGODB"
+  "mongodb": "MONGODB",
+  "ttv_client_id": "TTV_CLIENT_ID",
+  "ttv_client_secret": "TTV_CLIENT_SECRET"
 }
