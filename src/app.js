@@ -22,17 +22,15 @@ const mongoose = require('./mongoose');
 
 const app = express(feathers());
 
-const corsOptions = {
-  origin: ['https://dono702.com/', 'http://localhost:8080'],
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  credentials: true,
-};
-
+// const corsOptions = {
+//   origin: ['https://dono702.com/', 'http://localhost:8080'],
+//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
 // Load app configuration
 app.configure(configuration());
 // Enable security, CORS, compression, favicon and body parsing
 app.use(helmet());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({
