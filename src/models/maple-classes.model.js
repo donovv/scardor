@@ -46,7 +46,25 @@ module.exports = function (app) {
       survivabilty: {type: Number},
     },
     rating: Number,
-
+    description: String,
+    linkskill: {
+      name: String,
+      value: String,
+    },
+    legionskill: {
+      name: String,
+      value: String,
+    },
+    pros: {
+      pro1: String,
+      pro2: String,
+    },
+    cons: {
+      con1: String,
+      con2: String,
+    },
+    links: Array,
+    classimg: String
   }, {
     timestamps: true
   });
